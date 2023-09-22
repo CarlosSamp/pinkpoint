@@ -1,4 +1,4 @@
-# pinkpoint
+# Pinkpoint
 
 TYPO3 Extension
 - User registration
@@ -10,4 +10,5 @@ TYPO3 Extension
 
 Example:
 **https://csperedo.website/pinkpoint/**
+
 registration not activated
