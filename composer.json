@@ -1,0 +1,28 @@
+{
+    "name": "csp/pinkpoint",
+    "type": "typo3-cms-extension",
+    "description": "Kletterrouten Verwaltung und Kletterer Besteigungsjournal.",
+    "authors": [
+        {
+            "name": "Carlos Sampaio Peredo",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Csp\\Pinkpoint\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Csp\\Pinkpoint\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "csp/pinkpoint": "self.version",
+        "typo3-ter/pinkpoint": "self.version"
+    }
+}

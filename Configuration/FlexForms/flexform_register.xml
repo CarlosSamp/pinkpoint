@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Pinkpoint</sheetTitle>
+
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.includePid>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:tx_pinkpoint.storage</label>
+
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includePid>
+
+                    <settings.includePageUid>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:tx_pinkpoint.redirect</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includePageUid>
+
+                    <settings.includeGroupId>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:tx_pinkpoint.log_group</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includeGroupId>
+                    <settings.includeAdminGroupId>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:tx_pinkpoint.admin_group</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includeAdminGroupId>
+                    <settings.includeReleaseMail>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:release_email</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includeReleaseMail>
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

@@ -1,0 +1,128 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+xmlns:csp="http://typo3.org/ns/Csp/Pinkpoint/ViewHelpers"
+data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+
+<h1>
+	<f:translate key="sector_list" />
+</h1>
+<!-- Google Maps -->
+<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js">
+</script>
+<div id="map"></div>
+<script>
+	(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+	  key: "AIzaSyDoxccCP3aM32WRAOAesy3wyWyBHRZjAiU",
+	  // Add other bootstrap parameters as needed, using camel case.
+	  // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+	});
+  </script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDoxccCP3aM32WRAOAesy3wyWyBHRZjAiU"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js "> -->
+</script>
+<!-- ?key=AIzaSyDc_vOUIw1gh6XnAJWxVb46eSqQ5fv7UP0 -->
+
+<div class="sector-list">
+	<f:flashMessages />
+	<!-- search -->
+	<f:form action="list" name="keyword" >
+	<f:form.textfield name="keyword" value="{keyword}" />
+	<div class="select-wrapper">
+		<f:form.select name="country" options="{countries}" optionValueField="shortNameEn" optionLabelField="shortNameEn" sortByOptionLabel="true"
+		value="{countryEn}" />
+	</div>
+	<f:form.submit value="{f:translate(key: 'search')}" />
+</f:form>
+<span>Anzahl Sektoren: <f:count>{sectors}</f:count></span>
+<br />
+<!-- sectors Listing -->
+<table id='open_here' class="tx_pinkpoint">
+	<tr>
+		<th><csp:sort keyword="{keyword}" sortby="name" view="list" order="{order}">
+			<f:translate key="tx_pinkpoint_domain_model_sector" /></csp:sort></th>
+			<th></th>
+			<th><csp:sort keyword="{keyword}" sortby="location" view="list" order="{order}">
+				<f:translate key="tx_pinkpoint_domain_model_sector.location" /></csp:sort>
+			</th>
+			<th>
+				<f:translate key="tx_pinkpoint_domain_model_sector.country" /></th>
+
+			</tr>
+
+			<f:for each="{sectors}" as="sector">
+			<tr class="sector-row">
+
+				<td>
+					<h3>
+						<f:link.action class="sectorName" action="show" arguments="{sector : sector}">{sector.name}</f:link.action>
+					</h3>
+
+				</td>
+				<td><f:if condition="{sector.image}">
+					<f:then>
+
+					<div class="avatar-wrapper">
+						<f:link.action action="show" arguments="{sector : sector}">
+						<f:image class="profile-pic" image="{sector.image}" />
+					</f:link.action>
+				</div>
+
+			</f:then>
+			<f:else>
+			<div class="avatar-wrapper">
+				<f:link.action action="show" arguments="{sector : sector}">
+				<div class="upload-button">
+					<br />
+					<br />
+					<h3><f:translate key="request_upload" /></h3>
+					<!-- <i class="pic" aria-hidden="true"></i> -->
+				</div>
+			</f:link.action>
+		</div>
+	</f:else>
+</f:if></td>
+<td>
+	{sector.location}
+</td>
+<td>
+	{sector.country.shortNameLocal}
+</td>
+<f:comment>
+<td>
+	<f:link.action action="edit" arguments="{sector : sector}">
+	<core:icon identifier="edit" />
+</f:link.action>
+</td>
+</f:comment>
+</tr>
+
+<!-- coords for googlemaps -->
+<p class="coords hide">{sector.latitude} , {sector.longitude}</p>
+</f:for>
+</table>
+</div>
+
+<!-- /Sectors List -->
+
+<!-- Localization -->
+<f:if condition="{climber}">
+<f:then>
+<p class="localUser hide">{climber.country.isoCodeA2}</p>
+</f:then>
+<f:else>
+<p class="local hide">{lang}</p>
+
+</f:else>
+</f:if>
+
+<f:if condition="{countrySearch}">
+<p class="countrySearch hide">{countrySearch.isoCodeA2}</p>
+</f:if>
+<!-- /Localization -->
+
+</f:section>
+
+
+</html>

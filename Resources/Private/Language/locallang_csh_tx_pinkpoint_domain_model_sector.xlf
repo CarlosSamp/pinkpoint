@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T09:39:02Z" product-name="pinkpoint">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="country.description">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="latitude.description">
+				<source>latitude</source>
+			</trans-unit>
+			<trans-unit id="longitude.description">
+				<source>longitude</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="sectorcanvas.description">
+				<source>sectorcanvas</source>
+			</trans-unit>
+			<trans-unit id="sector_admins.description">
+				<source>sectorAdmins</source>
+			</trans-unit>
+			<trans-unit id="routes.description">
+				<source>routes</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

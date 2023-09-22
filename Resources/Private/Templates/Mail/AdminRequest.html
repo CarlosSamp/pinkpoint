@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="mail" />
+<f:section name="content">
+   <h1>Hi </h1>
+   <h2>{climber.firstname} {climber.lastname}, ID: {climber.uid}, Will die Administrationsrecht für den Sektor - {sector.name}</h2>
+
+   <f:link.action controller="Sector" action="show" arguments="{sector : sector}" absolute="1">
+      {Sector.name}
+   </f:link.action>
+   <!-- Add here, Climber ShowPublic -->
+   <f:link.action action="release" controller="Sector" name="sector" arguments="{sector : sector, climber : climber}" absolute="1">
+Freigeben
+   </f:link.action>
+
+
+
+</f:section>
+
+</html>

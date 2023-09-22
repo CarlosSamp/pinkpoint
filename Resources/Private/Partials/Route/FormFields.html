@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="wrap-cont">
+
+   <!-- pass the canvas from the Model to Java with {object.canvas}-->
+   <p id="loadcanvas" class="hide" data-canvas="{route.sector.sectorcanvas}"></p>
+
+   <!-- pass translated alert depending on edit status -->
+   <p id="editStatus" class="hide" data-edit="" data-trans="{f:translate(key: 'translatedAlert.0')}"></p>
+   <f:for each="{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}" as="status">
+      <p id="translatedAlert-{status}" class="hide" data-edit="" data-trans="{f:translate(key: 'translatedAlert.{status}')}"></p>
+   </f:for>
+
+   <div class="sendcoords">
+
+      <!-- Update the Route -->
+      <f:form action="update" name="route">
+         <h5>
+            <f:translate key="tx_pinkpoint_domain_model_route.name" />
+         </h5>
+         <f:form.textfield id="name" name="name" value="{route.name}" />
+         <h5>
+            <f:translate key="tx_pinkpoint_domain_model_route.description" />
+         </h5>
+         <f:form.textarea id="description" class="description" name="description" value="{route.description-> f:format.html()} " /><br />
+         <h5>
+            <f:translate key="tx_pinkpoint_domain_model_route.length" />
+         </h5>
+         <f:form.textfield id="length" name="length" value="{route.length}" /><br />
+
+         <f:form.textfield id="objectId" class="hide" readonly="true" name="routeId" value="{route.uid}" />
+         <f:form.textfield id="sectorCount" class="hide" readonly="true" name="sectorCount" value="{route.sectorCount}" />
+         <h5><f:translate key="tx_pinkpoint_domain_model_route.grade" /></h5>
+
+
+         <f:form.select id="grade" name="grade" options="{route.allGrades}" optionValueField="value" optionLabelField="key" value="{route.grade}" />
+         <f:form.hidden id="routes" name="routes" value="{route}" />
+         <f:form.hidden id="route" name="route" value="{route.uid}" />
+         <f:form.hidden id="scale" name="canvasScale" value="" /><br>
+         <f:form.hidden id="fluidSend" name="sectorcanvas" value="" />
+         <f:form.submit id="fluid" value="{f:translate(key: 'save')}" />
+      </f:form>
+
+
+   </div>
+   <hr>
+   <!-- enable drawing when Sector image is available -->
+   <f:if condition="{route.sector.image}">
+   <p><f:translate key="start_draw" /></p>
+
+      <!-- Buttons for the drawing -->
+      <div class="button-container">
+         <button id="startRoute" class="btn hide">
+            <f:translate key="start" /></button>
+         <button id="addPoint" class="btn hide">
+            <f:translate key="add_point" /></button>
+         <button id="endRoute" class="btn">
+            <f:translate key="end_route" /></button>
+         <button id="remove" class="btn">
+            <f:translate key="draw_delete" /></button>
+            <span class="size"> Size </span> <input type="number" id="size" name="size" placeholder="1">
+            <label class="checkbox-container">
+        <f:translate key="rappel"/><input id="checkend" type="checkbox" name="abseil" value="true">
+        <span class="checkmark"></span>
+    </label>
+      </div>
+
+
+      <br>
+      <div class="canvas-col">
+         <canvas id="canvasshow" width="100%" height="600px" style="border: 1px solid rgb(170, 170, 170); position: absolute; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+         <f:image id="image" image="{route.sector.image}"></f:image>
+      </div>
+   </f:if>
+
+   <br />
+   <button id="confirmButton" ><f:translate key="route_delete"/></button>
+
+   <f:form class="hide" action="delete" name="route" arguments="{route : route}">
+      <f:form.hidden id="fluidSendDeleted" name="sectorcanvas" value="" />
+      <f:form.submit class="hide" id="fluidDelete" value="{f:translate(key: 'route_delete')}" />
+   </f:form>
+
+</div>
+
+</html>

@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:flashMessages />
+<div class="wrap-cont">
+   <!-- pass the canvas from the Model to Java with {object.canvas}-->
+   <p id="loadcanvas" class="hide" data-canvas="{sector.sectorcanvas}"></p>
+   <p id="scalecanvas" class="hide" data-scale="{sector.canvasScale}"></p>
+   <p id="editStatus" class="hide" data-edit="" data-trans="{f:translate(key: 'translatedAlert.0')}"></p>
+   <f:for each="{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}" as="status">
+      <p id="translatedAlert-{status}" class="hide" data-edit="" data-trans="{f:translate(key: 'translatedAlert.{status}')}"></p>
+   </f:for>
+   <p id="datatest"></p>
+   <f:if condition="{sector.image}">
+      <f:then>
+         <div class="canvas-col">
+            <canvas id="canvasshow" width="100%" height="600px" style="border: 1px solid rgb(170, 170, 170); position: absolute; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+            <f:image id="image" image="{sector.image}" alt="No image for this sector"></f:image><img>
+         </div>
+      </f:then>
+   </f:if>
+
+</div>
+
+</html>

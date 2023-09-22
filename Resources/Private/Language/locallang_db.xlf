@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T09:39:02Z" product-name="pinkpoint">
+		<header/>
+		<body>
+			<trans-unit id="tx_pinkpoint_domain_model_sector">
+				<source>Sector</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.sectorcanvas">
+				<source>Sectorcanvas</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.sector_admins">
+				<source>Sector Admins</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.routes">
+				<source>Routes</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber">
+				<source>Climber</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender.1">
+				<source>Mr</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender.2">
+				<source>Mrs</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.avatarimage">
+				<source>Avatarimage</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.usergroup">
+				<source>Usergroup</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.ascents">
+				<source>Ascents</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.ratings">
+				<source>Ratings</source>
+			</trans-unit>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_Pinkpoint_Climber">
+				<source>Pinkpoint Climber</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade">
+				<source>Grade</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.length">
+				<source>Length</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.sector_count">
+				<source>Sector Count</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.sector">
+				<source>Sector</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.ratings">
+				<source>Ratings</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent">
+				<source>Ascent</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_date">
+				<source>Ascent Date</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art">
+				<source>Ascent Art</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.public_visible">
+				<source>Public Visible</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating">
+				<source>Route Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating.rating">
+				<source>Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating.route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_pinkpoint.name">
+				<source>Pinkpoint</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_pinkpoint.description">
+				<source>Manage climbing routes and log ascents of routes</source>
+			</trans-unit>
+
+			<!-- custom translations -->
+			<trans-unit id="startpage">
+				<source>Pinkpoint Homepage</source>
+			</trans-unit>
+			<trans-unit id="climber_registration">
+				<source>Climber Registration</source>
+			</trans-unit>
+			<trans-unit id="climber_page">
+				<source>Climber Page</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint.storage">
+				<source>Userstorage ID</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint.redirect">
+				<source>Page ID to redirect after Registration</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint.log_group">
+				<source>Group ID for log users</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint.admin_group">
+				<source>Group ID for Admin users</source>
+			</trans-unit>
+			<trans-unit id="release_email">
+				<source>E-Mail for Admin release</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

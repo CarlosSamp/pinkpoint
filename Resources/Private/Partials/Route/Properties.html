@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<table class="tx-pinkpoint">
+	<tr>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_sector" />: <f:link.action action="show" controller="Sector" arguments="{sector : route.sector}">{route.sector.name}</f:link.action>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_route.grade" />:
+			<f:translate key="tx_pinkpoint_domain_model_route.grade.{route.grade}" /></th>
+	</tr>
+	<tr>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_route.length" />: {route.length}</th>
+	</tr>
+</table>
+<br />
+<f:if condition="{route.description}">
+<h2>
+	<f:translate key="tx_pinkpoint_domain_model_route.description" />
+</h2>
+<p>{route.description-> f:format.html()}</p>
+</f:if>
+<hr>
+
+<f:if condition="{ascentsByRoute->f:count()} > 0">
+<h2>Besteigungen</h2>
+<f:then><table class="tx-pinkpoint">
+	<tr>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_date" /></th>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_ascent.comment" /></th>
+		<th>
+			<f:translate key="tx_pinkpoint_domain_model_climber" /></th>
+	</tr>
+
+	<f:for each="{ascentsByRoute}" as="ascent">
+		<f:if condition="{ascent.publicVisible}">
+			<tr>
+
+				<td>{ascent.ascentDate -> f:format.date(format: 'd.m.y')}</td>
+				<td>{ascent.comment}</td>
+				<td>
+				<f:if condition="{ascent.climber} == {climber}">
+				<f:then><f:link.action action="show" controller="Climber" arguments="{climber : ascent.climber}">{ascent.climber.firstName} {ascent.climber.lastName}</f:link.action>
+			</f:then>
+				<f:else><f:link.action action="publicShow" controller="Climber" arguments="{climber : ascent.climber}">{ascent.climber.firstName} {ascent.climber.lastName}</f:link.action>
+			</f:else>
+			</f:if>
+				</td>
+			</tr>
+		</f:if>
+	</f:for>
+</table>
+</f:then>
+<f:else>
+<h2><f:translate key="no_ascents" /></h2>
+</f:else>
+</f:if>
+
+
+
+
+</html>

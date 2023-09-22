@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <f:layout name="Default" />
+  <f:section name="content">
+  <h1><f:translate key="edit" />  {sector.name}</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" />
+
+<f:form class="sector-form" action="update" name="sector" object="{sector}" enctype="multipart/form-data">
+ <f:render partial="Sector/FormFields" arguments="{_all}"/>
+
+  <f:form.submit value="{f:translate(key: 'save')}" />
+</f:form>
+<!-- Localization -->
+<f:if condition="{sector.country}">
+   <f:then>
+   <p class="local hide">{sector.country.isoCodeA2}</p>
+   </f:then>
+   <f:else>
+   <p class="local hide">{climber.country.isoCodeA2}</p>
+   </f:else>
+</f:if>
+<!-- /Localization -->
+  </f:section>
+</html>

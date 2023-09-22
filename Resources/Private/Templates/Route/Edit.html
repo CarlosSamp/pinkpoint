@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+   <h1>
+      <f:translate key="edit" /> {route.name} <div id="star-cont" class="star-cont" data="{route.ratingsAverage}"></div> <span class="rating-number"></span>
+   </h1>
+   <f:flashMessages />
+   <f:render partial="FormErrors" />
+   <!-- pass edit mode to script -->
+   <p id="mode" class="hide" mode="edit"></p>
+
+   <f:render partial="Route/FormFields" arguments="{_all}" />
+
+</f:section>
+
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T09:39:02Z" product-name="pinkpoint">
+		<header/>
+		<body>
+			<trans-unit id="ascent_date.description">
+				<source>ascentDate</source>
+			</trans-unit>
+			<trans-unit id="ascent_art.description">
+				<source>ascentArt</source>
+			</trans-unit>
+			<trans-unit id="public_visible.description">
+				<source>publicVisible</source>
+			</trans-unit>
+			<trans-unit id="comment.description">
+				<source>comment</source>
+			</trans-unit>
+			<trans-unit id="route.description">
+				<source>route</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

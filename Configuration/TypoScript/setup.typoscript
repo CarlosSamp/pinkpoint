@@ -1,0 +1,78 @@
+
+plugin.tx_pinkpoint_pinkpoint {
+    view {
+        templateRootPaths.0 = EXT:{extension.shortExtensionKey}/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_pinkpoint_pinkpoint.view.templateRootPath}
+        partialRootPaths.0 = EXT:pinkpoint/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_pinkpoint_pinkpoint.view.partialRootPath}
+        layoutRootPaths.0 = EXT:tx_pinkpoint/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_pinkpoint_pinkpoint.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_pinkpoint_pinkpoint.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+        # Should be on by default, but can be disabled if all action in the plugin are uncached
+        requireCHashArgumentForActionArguments = 1
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+
+}
+shortcutIcon = fileadmin/icons/favicon.ico
+plugin.tx_pinkpoint_climberpage {
+    persistence {
+        storagePid = {$plugin.tx_pinkpoint_pinkpoint.persistence.storagePid}
+        #recursive = 1
+    }
+}
+
+plugin.tx_pinkpoint_climberregister {
+    persistence {
+        storagePid = {$plugin.tx_pinkpoint_pinkpoint.persistence.storagePid}
+        #recursive = 1
+    }
+}
+
+config.tx_extbase {
+  persistence {
+    classes {
+
+      TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
+        subclasses {
+          Tx_Pinkpoint_Climber = Csp\Pinkpoint\Domain\Model\Climber
+
+        }
+      }
+      Csp\Pinkpoint\Domain\Model\Climber {
+        mapping {
+          tableName = fe_users
+          recordType = 0
+        }
+      }
+
+    }
+  }
+}
+
+// https://docs.typo3.org/typo3cms/extensions/scriptmerger/6.0.1/Configuration/Constants/Index.html#css-merge-ignore
+# plugin.tx_scriptmerger.css.merge.ignore = EXT:pinkpoint/Resources/Public/Scss/pinkpoint.scss
+# plugin.tx_scriptmerger.javascript.merge.ignore = EXT:pinkpoint/Resources/Public/JavaScript/map.js
+
+page.includeCSS{
+    tx_pinkpoint = EXT:pinkpoint/Resources/Public/Scss/pinkpoint.scss
+    tx_pinkpoint{
+        disableCompression = 1
+    }
+}
+page.includeJSFooter{
+    tx_pinkpoint = EXT:pinkpoint/Resources/Public/JavaScript/pinkpoint.js
+    tx_pinkpoint{
+        disableCompression = 1
+    }
+}

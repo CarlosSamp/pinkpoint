@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T09:39:02Z" product-name="pinkpoint">
+		<header/>
+		<body>
+			<trans-unit id="tx_pinkpoint_domain_model_sector">
+				<source>Sector</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.sectorcanvas">
+				<source>Sectorcanvas</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.sector_admins">
+				<source>Sector Admins</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_sector.routes">
+				<source>Routes</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber">
+				<source>Climber</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender.1">
+				<source>Mr</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.gender.2">
+				<source>Mrs</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.avatarimage">
+				<source>Avatarimage</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.usergroup">
+				<source>Usergroup</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.ascents">
+				<source>Ascents</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_climber.ratings">
+				<source>Ratings</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade">
+				<source>Grade</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.length">
+				<source>Length</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.sector_count">
+				<source>Sector Count</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.sector">
+				<source>Sector</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.ratings">
+				<source>Ratings</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent">
+				<source>Ascent</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_date">
+				<source>Ascent Date</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art">
+				<source>Ascent Art</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.public_visible">
+				<source>Public Visible</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating">
+				<source>Route Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating.rating">
+				<source>Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_routerating.route">
+				<source>Route</source>
+			</trans-unit>
+
+			<!-- custom added translations -->
+			<trans-unit id="no_ascents">
+				<source>No ascents to show</source>
+			</trans-unit>
+			<trans-unit id="start_draw">
+				<source>Double-click on the canvas to start a route. Double-click again to insert connections</source>
+			</trans-unit>
+			<trans-unit id="released">
+				<source>got now the rights to Edit the Sector</source>
+			</trans-unit>
+			<trans-unit id="username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="email">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="register">
+				<source>Register</source>
+			</trans-unit>
+			<trans-unit id="create_new">
+				<source>Create New</source>
+			</trans-unit>
+			<trans-unit id="search">
+				<source>search</source>
+			</trans-unit>
+			<trans-unit id="stars">
+				<source>Stars</source>
+			</trans-unit>
+			<trans-unit id="total_ratings">
+				<source>Total Ratings</source>
+			</trans-unit>
+			<trans-unit id="welcome">
+				<source>Welcome</source>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="back">
+				<source>Back</source>
+			</trans-unit>
+			<trans-unit id="sector_list">
+				<source>Sector List</source>
+			</trans-unit>
+			<trans-unit id="save">
+				<source>Save</source>
+			</trans-unit>
+			<trans-unit id="make_log">
+				<source>Make Log</source>
+			</trans-unit>
+			<trans-unit id="hide_log">
+				<source>Hide</source>
+			</trans-unit>
+			<trans-unit id="log">
+				<source>check to log</source>
+			</trans-unit>
+			<trans-unit id="select_country">
+				<source>Select a Country</source>
+			</trans-unit>
+			<trans-unit id="new_image">
+				<source>New Image.
+					Caution! The Canvas will remain but might no longer match with the drawed routes!</source>
+			</trans-unit>
+			<trans-unit id="coordinates">
+				<source>Coordinates (select on Map)</source>
+			</trans-unit>
+			<trans-unit id="new_sector">
+				<source>create new sector</source>
+			</trans-unit><trans-unit id="routes_overview">
+				<source>Routes overview</source>
+			</trans-unit>
+			<trans-unit id="add_route">
+				<source>Add Route</source>
+			</trans-unit>
+			<trans-unit id="start">
+				<source>Start route</source>
+			</trans-unit>
+			<trans-unit id="add_point">
+				<source>Add Point</source>
+			</trans-unit>
+			<trans-unit id="end_route">
+				<source>End Route</source>
+			</trans-unit>
+			<trans-unit id="rappel">
+				<source>End with rappel?</source>
+			</trans-unit>
+			<trans-unit id="delete">
+				<source>Delete</source>
+			</trans-unit>
+			<trans-unit id="route_delete">
+				<source>Delete Route</source>
+			</trans-unit>
+			<trans-unit id="draw_delete">
+				<source>Delete drawing</source>
+			</trans-unit>
+			<trans-unit id="date_later">
+				<source>Please select a Date in the future</source>
+			</trans-unit>
+			<trans-unit id="date_invalid">
+				<source>Date not valid</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.update">
+				<source>Ascent saved and rating updated - </source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.save">
+				<source>Ascent saved, rating unchanged - </source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.create">
+				<source>Ascent and rating saved - </source>
+			</trans-unit>
+			<trans-unit id="public">
+				<source>Public</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.public.1">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.update">
+				<source>Route updated</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.create">
+				<source>Route created</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.delete">
+				<source>Route deleted</source>
+			</trans-unit>
+			<trans-unit id="climber_create">
+				<source>Profile created, redirecting to Login</source>
+			</trans-unit>
+			<trans-unit id="climber_update">
+				<source>Profile updated</source>
+			</trans-unit>
+			<trans-unit id="climber_deleted">
+				<source>Profile deleted</source>
+			</trans-unit>
+			<trans-unit id="sector_update">
+				<source>Sector updated</source>
+			</trans-unit>
+			<trans-unit id="request_admin">
+				<source>Request Admin rights for this sector</source>
+			</trans-unit>
+			<trans-unit id="username_exists">
+				<source>The username allready exists</source>
+			</trans-unit>
+			<trans-unit id="request_sent">
+				<source>Request sent!</source>
+			</trans-unit>
+			<trans-unit id="delete_not_possible">
+				<source>There are allready Ascents at this Route, you can not delete it!</source>
+			</trans-unit>
+			<trans-unit id="deleted">
+				<source>Deleted</source>
+			</trans-unit>
+
+			<!-- Ascent arts -->
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art">
+				<source>Ascent Art</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.0">
+				<source>None</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.1">
+				<source>OnSight</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.2">
+				<source>Flash</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.3">
+				<source>RedPoint</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.4">
+				<source>All Free</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_ascent.ascent_art.5">
+				<source>Top Rope</source>
+			</trans-unit>
+
+			<!-- Alerts for Route Drawing -->
+			<trans-unit id="translatedAlert.0">
+				<source>Please enter an valid ID</source>
+			</trans-unit>
+			<trans-unit id="translatedAlert.1">
+				<source>There is allready a drawing, please delete or continue</source>
+			</trans-unit>
+			<trans-unit id="translatedAlert.2">
+				<source>There is allready a End Point, if you want to make changes reset the drawing</source>
+			</trans-unit>
+			<trans-unit id="translatedAlert.3">
+				<source>Please Start a Route</source>
+			</trans-unit>
+			<trans-unit id="translatedAlert.4">
+				<source>"There is allready a drawing, please delete or continue"</source>
+			</trans-unit>
+
+			<!-- grades -->
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.0">
+				<source>3</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.1">
+				<source>4</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.2">
+				<source>5A</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.3">
+				<source>5A+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.4">
+				<source>5B</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.5">
+				<source>5B+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.6">
+				<source>5C</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.7">
+				<source>5C+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.8">
+				<source>6A</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.9">
+				<source>6A+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.10">
+				<source>6B</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.11">
+				<source>6B+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.12">
+				<source>6C</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.13">
+				<source>6C+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.14">
+				<source>7A</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.15">
+				<source>7A+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.16">
+				<source>7B</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.17">
+				<source>7B+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.18">
+				<source>7C</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.19">
+				<source>7C+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.20">
+				<source>8A</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.21">
+				<source>8A+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.22">
+				<source>8B</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.23">
+				<source>8B+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.24">
+				<source>8C</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.25">
+				<source>8C+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.26">
+				<source>9A</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.27">
+				<source>9A+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.28">
+				<source>9B</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.29">
+				<source>9B+</source>
+			</trans-unit>
+			<trans-unit id="tx_pinkpoint_domain_model_route.grade.30">
+				<source>9C</source>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

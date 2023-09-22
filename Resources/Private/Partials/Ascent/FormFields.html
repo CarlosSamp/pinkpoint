@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="ascentDate">
+	<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_date" />
+</label><br />
+<f:form.textfield class="datetimepicker" property="ascentDate" value="{ascent.ascentDate -> f:format.date(format: 'd.m.Y')}" additionalAttributes="{autocomplete: 'off', required: true}" />
+<br />
+<label for="ascentArt">
+	<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_art" />
+</label><br />
+	<f:form.select property="ascentArt" value="{ascentArt}" options="{0: 'Onsight', 1: 'Flash', 2: 'RedPoint', 3:'All Free', 4:'Top Rope', 5:'None', 6: 'Solo', 7: 'Freesolo', 8: 'Solo base' }" /><br />
+<label for="publicVisible">
+	<f:translate key="tx_pinkpoint_domain_model_ascent.public_visible" />
+</label><br />
+	<f:form.checkbox property="publicVisible" value="1" checked="{ascent.publicVisible}"/><br />
+<label for="comment">
+	<f:translate key="tx_pinkpoint_domain_model_ascent.comment" />
+</label><br />
+	<f:form.textarea property="comment" cols="40" rows="15" /><br />
+</html>

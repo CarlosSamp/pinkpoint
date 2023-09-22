@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="username">
+	<f:translate key="username" />
+</label><br />
+<f:form.textfield required="true" name="username" additionalAttributes="{autocomplete: 'off'}" value="{f:if(condition: '{climber.username}', then: '{climber.username}', else: '')}" /><br />
+
+<label for="firstname">
+	<f:translate key="firstname" />
+</label><br />
+<f:form.textfield required="true" name="firstName" value="{f:if(condition: '{climber.firstname}', then: '{climber.firstname}', else: '')}"/><br />
+
+<label for="lastname">
+	<f:translate key="lastname" />
+</label><br />
+<f:form.textfield required="true" name="lastName" value="{f:if(condition: '{climber.lastname}', then: '{climber.lastname}', else: '')}"/><br />
+<label for="gender">
+	<f:translate key="tx_pinkpoint_domain_model_climber.gender" />
+</label><br />
+<f:form.radio name="gender" value="1" checked="{f:if(condition: '{climber.gender} == 1', then: 'true')}"/><f:translate key="tx_pinkpoint_domain_model_climber.gender.1" />
+<f:form.radio name="gender" value="2" checked="{f:if(condition: '{climber.gender} == 2', then: 'true')}"/><f:translate key="tx_pinkpoint_domain_model_climber.gender.2" />
+<br />
+<label for="email">
+	<f:translate key="email" />
+</label><br />
+<f:form.textfield required="true" type="email" name="email" value="{f:if(condition: '{climber.email}', then: '{climber.email}', else: '')}" /><br />
+<f:if condition="!{climber}">
+<label for="password">
+	<f:translate key="password" />
+</label><br />
+<f:form.password name="password" additionalAttributes="{minlength: 6}" value="" /><br />
+</f:if>
+
+<label for="country">
+	<f:translate key="tx_pinkpoint_domain_model_sector.country" />
+</label><br />
+<f:form.select name="country" options="{countries}" optionLabelField="shortNameEn" sortByOptionLabel="2" prependOptionLabel="{f:translate(key: 'select_country')}" value="{f:if(condition: '{climber.country}', then: '{climber.country.uid}', else: '')}"/><br />
+
+<label for="avatarImage">
+	<f:translate key="tx_pinkpoint_domain_model_climber.avatarimage" />
+</label><br />
+<f:if condition="{climber.avatarimage}">
+<f:then>
+<div class="avatar-wrapper">
+			<div class="canvas-col">
+			<f:image class="profile-pic" image="{climber.avatarimage}" />
+			</div>
+	<div class="upload-button">
+		<i class="pic" aria-hidden="true"></i>
+	</div>
+	<f:form.upload class="file-upload hide" name="image" />
+</div>
+</f:then>
+<f:else>
+<div class="avatar-wrapper">
+		<img class="icon-pic" src=""  />
+
+	<div class="upload-button">
+		<i class="pic" aria-hidden="true"></i>
+	</div>
+	<f:form.upload class="file-upload hide" name="image" />
+</div>
+</f:else>
+</f:if>
+
+
+</html>

@@ -1,0 +1,7 @@
+digraph "Grafische Darstellung der Klassenhierarchie"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Csp\\Pinkpoint\\Utility\l\\UploadUtility",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCsp_1_1Pinkpoint_1_1Utility_1_1UploadUtility.html"];
+}

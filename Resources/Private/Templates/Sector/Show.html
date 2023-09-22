@@ -1,0 +1,173 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:csp="http://typo3.org/ns/Csp/Pinkpoint/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+	<h1><f:translate key="tx_pinkpoint_domain_model_sector" /> {sector.name}</h1>
+
+	<f:flashMessages />
+	<f:if condition="{isAdmin}">
+		<f:then>
+			<f:link.action action="edit" arguments="{sector : sector}">
+				<f:translate key="edit" />
+			</f:link.action><br />
+		</f:then>
+		<f:else>
+			<f:if condition="{climber}">
+				<f:link.action action="request" arguments="{sector : sector, climber : climber}">
+					<f:translate key="request_admin" />
+				</f:link.action><br />
+			</f:if>
+
+		</f:else>
+	</f:if>
+
+
+	<!-- pass the canvas from the Model to Java with {object.canvas}-->
+	<p id="loadcanvas" class="hide" data-canvas="{sector.sectorcanvas}"></p>
+
+	<p id="mode" class="hide" mode="read"></p>
+	<p class="hide make-log">
+		<f:translate key="make_log" />
+	</p>
+	<p class="hide hide-log">
+		<f:translate key="hide_log" />
+	</p>
+	<p class="hide date-later">
+		<f:translate key="date_later" />
+	</p>
+	<p class="hide date-invalid">
+		<f:translate key="date_later" />
+	</p>
+
+	<f:render partial="Canvas" arguments="{_all}" />
+	<!-- add new route -->
+	<f:if condition="{isAdmin} && {climber}">
+		<div class="accordion-container">
+			<div class="tabs">
+				<div class="tab">
+					<input class="tab-input" type="checkbox" id="chck1">
+					<label class="tab-label" for="chck1">
+						<f:translate key="add_route" /></label>
+					<div class="tab-content">
+						<f:render partial="FormErrors" />
+						<f:form action="create" controller="Route" name="newRoute" object="{newRoute}">
+							<label for="name">
+								<f:translate key="tx_pinkpoint_domain_model_route.name" />
+							</label><br />
+							<f:form.textfield property="name" /><br />
+							<label for="length">
+								<f:translate key="tx_pinkpoint_domain_model_route.length" />
+							</label><br />
+							<f:form.textfield property="length" /><br />
+							<label for="grade">
+								<f:translate key="tx_pinkpoint_domain_model_route.grade" />
+							</label><br />
+
+							<f:form.select property="grade" options="{sector.AllGrades}" optionValueField="value" optionLabelField="key" value="14" /><br />
+							<f:form.hidden property="sector" value="{sector.uid}" />
+							<f:form.submit value="{f:translate(key: 'create_new')}" />
+						</f:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</f:if>
+
+	<!-- routes listing -->
+	<div class="routes-list">
+		<f:form class="ascent-list" action="new" name="ascent" controller="Ascent" arguments="{newAscent}">
+			<h1><f:translate key="tx_pinkpoint_domain_model_sector.routes" /></h1>
+
+			<f:if condition="{climber} && {sector.routes}">
+				<button id="logbutton" type="button" name="button" data="show">
+					<f:translate key="make_log" /></button>
+			</f:if>
+
+			<table>
+				<tr>
+					<th>
+						<csp:sort object="{sector}" sortby="uid" view="show" order="{order}">ID</csp:sort>
+					</th>
+					<th>
+						<csp:sort object="{sector}" sortby="name" view="show" order="{order}">Name</csp:sort>
+					</th>
+					<th>
+						<csp:sort object="{sector}" sortby="grade" view="show" order="{order}">
+							<f:translate key="tx_pinkpoint_domain_model_route.grade" />
+						</csp:sort>
+					</th>
+					<th class="not-log">
+						<f:translate key="stars" /></th>
+					<th class="not-log total-rating">
+						<f:translate key="total_ratings" /></th>
+					<th class="log hide">
+						<f:translate key="log" /></th>
+					<th class="log hide">
+						<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_art" /></th>
+					<th class="log hide">
+						<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_date" /></th>
+					<th class="log rating hide">
+						<f:translate key="tx_pinkpoint_domain_model_routerating.rating" /></th>
+					<th class="log hide"><f:translate key="tx_pinkpoint_domain_model_ascent.comment" /></th>
+					<th class="log hide"><f:translate key="public" /></th>
+
+				</tr>
+				<f:for each="{routes}" as="r">
+					<tr>
+						<td>{r.uid}</td>
+						<td class="route-name">
+							<f:link.action action="show" controller="Route" arguments="{route : r}">{r.name}</f:link.action>
+						</td>
+						<td>
+							<f:translate key="tx_pinkpoint_domain_model_route.grade.{r.grade}"></f:translate>
+						</td>
+						<td class="not-log">
+							<div id="star-cont" class="star-cont" data="{r.ratingsAverage}"></div>
+						</td>
+						<td class="not-log total-rating">{r.countRatings} </td>
+						<td class="check-ascent log hide">
+							<f:form.checkbox class="" name="ascent[{r.uid}][routeUid]" value="{r.uid}" checked="" /></td>
+						<td class="log hide">
+							<f:form.select class="ascent-art" name="ascent[{r.uid}][art]" options="{0: 'None', 1: 'OnSight', 2: 'Flash', 3:'RedPoint', 4:'All Free', 5:'Top Rope', 6: 'Solo', 7: 'Freesolo', 8: 'Solo base' }" /> </td>
+						<td class="log hide">
+							<f:form.textfield class="datetimepicker" name="ascent[{r.uid}][ascentDate]" value="{today}" additionalAttributes="{autocomplete: 'off', required: true}" />
+						</td>
+						<td class="rating log hide">
+							<f:form.select class="rating" name="ascent[{r.uid}][rating]" options="{ratingOptions}" value="{r.ratingByClimber}" /></td>
+						<td class="log hide">
+							<f:form.textfield class="" name="ascent[{r.uid}][comment]" />
+						</td>
+						<td class="log hide">
+							<f:form.checkbox class="" name="ascent[{r.uid}][publicVisible]" value="1" />
+						</td>
+
+						<f:if condition="{isAdmin}">
+							<td class="not-log">
+								<f:link.action action="edit" controller="Route" arguments="{route : r}">
+									<core:icon identifier="edit" />
+								</f:link.action>
+							</td>
+						</f:if>
+
+					</tr>
+
+				</f:for>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><f:form.hidden class="" name="sector" value="{sector.uid}" /></td>
+					<td>
+						<f:form.submit class="log hide" value="{f:translate(key: 'save')}" /></td>
+				</tr>
+			</table>
+
+		</f:form>
+
+		<f:link.action action="list">
+			<f:translate key="back" />
+		</f:link.action><br />
+
+	</div>
+</f:section>
+
+</html>

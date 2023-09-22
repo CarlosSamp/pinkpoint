@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-04-20T09:39:02Z" product-name="pinkpoint">
+		<header/>
+		<body>
+			<trans-unit id="rating.description">
+				<source>rating</source>
+			</trans-unit>
+			<trans-unit id="route.description">
+				<source>route</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

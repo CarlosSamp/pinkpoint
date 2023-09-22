@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Pinkpoint</sheetTitle>
+
+                </TCEforms>
+                <type>array</type>
+                <el>
+
+                    <settings.includeReleaseMail>
+                        <TCEforms>
+                            <label>LLL:EXT:pinkpoint/Resources/Private/Language/locallang_db.xlf:release_email</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.includeReleaseMail>
+                    <settings.ascentsPid>
+                        <TCEforms>
+                            <label>Ascents PID</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.ascentsPid>
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

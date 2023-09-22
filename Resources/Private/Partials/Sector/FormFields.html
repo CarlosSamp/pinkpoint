@@ -1,0 +1,65 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<!-- Sector Name -->
+<label for="name">
+	<f:translate key="tx_pinkpoint_domain_model_sector.name" />
+</label><br />
+<f:form.textfield class="sectorName" property="name" /><br />
+
+<!-- Country -->
+<label for="country">
+	<f:translate key="tx_pinkpoint_domain_model_sector.country" />
+</label><br />
+<f:form.select property="country" options="{countries}" optionLabelField="shortNameEn" sortByOptionLabel="2" prependOptionLabel="{f:translate(key: 'select_country')}" value="{f:if(condition: '{sector.country}', then: '{sector.country.uid}', else: '')}" />
+<br />
+
+<!-- Map coordinates -->
+<label for="location">
+	<f:translate key="tx_pinkpoint_domain_model_sector.location" />
+</label><br />
+<f:form.textfield property="location" /><br />
+
+<label for="location">
+	<f:translate key="coordinates" />
+</label>
+<f:form.textfield size="20" readonly="true" property="latitude" name="displayLat" id="displayLat" additionalAttributes="{maxlength: 10}" value="{f:if(condition: '{sector.latitude}', then: '{sector.latitude}', else: '')}" />
+<f:form.textfield size="20" readonly="true" property="longitude" name="displayLong" id="displayLong" additionalAttributes="{maxlength: 10}" value="{f:if(condition: '{sector.longitude}', then: '{sector.longitude}', else: '')}" />
+<!-- <p class="coords">{sector.latitude} , {sector.longitude}</p> -->
+<!-- Google Map -->
+<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js">
+</script>
+<div id="map"></div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc_vOUIw1gh6XnAJWxVb46eSqQ5fv7UP0"></script>
+
+
+<!-- image -->
+<label for="image">
+	<f:translate key="new_image" />
+</label><br />
+<p id="loadcanvas" class="hide" data-canvas="{sector.sectorcanvas}"></p>
+<f:if condition="{sector.image}">
+<f:then>
+<div class="edit-wrapper">
+			<div class="canvas-col">
+				<canvas id="canvasshow" width="100%" height="600px" style="border: 1px solid rgb(170, 170, 170); position: absolute; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+				<f:image id="image" class="profile-pic" image="{sector.image}"></f:image>
+			</div>
+	<div class="upload-button">
+		<i class="pic" aria-hidden="true"></i>
+	</div>
+	<f:form.upload class="file-upload hide" name="image" />
+</div>
+</f:then>
+<f:else>
+<div class="avatar-wrapper">
+		<img class="profile-pic" src=""  />
+
+	<div class="upload-button">
+		<i class="pic" aria-hidden="true"></i>
+	</div>
+	<f:form.upload class="file-upload hide" name="image" />
+</div>
+</f:else>
+</f:if>
+
+</html>

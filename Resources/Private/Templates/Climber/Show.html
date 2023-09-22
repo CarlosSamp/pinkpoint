@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:chart="http://typo3.org/ns/Csp/Pinkpoint/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelper" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="content">
+
+	<!-- Avatarimage -->
+	<f:if condition="{climber.avatarimage}">
+	<div class="user-header">
+		<div class="avatar-wrapper">
+			<f:image class="profile-pic" image="{climber.avatarimage}" width="300" />
+		</div>
+		<h1>
+			<f:translate key="welcome" />
+			<f:translate key="tx_pinkpoint_domain_model_climber.gender.{climber.gender}" /> {climber.lastName} {climber.firstName}</h1>
+	</div>
+	</f:if>
+
+	<!-- climber properties -->
+	<f:render partial="Climber/Properties" arguments="{climber:climber}" />
+	<f:link.action action="edit" arguments="{climber:climber}">
+		<f:translate key="edit" />
+	</f:link.action>
+	<f:link.action action="publicShow" arguments="{climber:climber}">
+		<p>Show my Public Profile</p>
+	</f:link.action>
+	<f:flashMessages />
+	<!-- climber ascents chart -->
+	<div style="height: {chart:stackedData(count-grades: climber)}px; min-height: 140px">
+		<canvas id="chartStacked" width="50%" style="height: {chart:stackedData(count-grades: climber)}px"></canvas>
+	</div>
+	<p id="labels" class="hide">
+		<chart:stackedData labels="{climber}" />
+	</p>
+	<p id="data" class="hide">
+		<chart:stackedData dataset="{climber}" />
+	</p>
+	<hr>
+	<h2>Besteigungen</h2>
+	<!-- ascents listing -->
+	<table>
+		<tr>
+			<th>
+				<f:translate key="tx_pinkpoint_domain_model_sector.routes" />
+			</th>
+			<th>
+				<f:translate key="tx_pinkpoint_domain_model_route.grade" />
+			</th>
+			<th>
+				<f:translate key="tx_pinkpoint_domain_model_sector" />
+			</th>
+			<th>
+				<f:translate key="date" /></th>
+			<th>
+				<f:translate key="ascent_art" /> </th>
+			<th>
+				<f:translate key="public" /></th>
+		</tr>
+		<f:for each="{climber.ascents->v:iterator.sort(sortBy: 'ascentDate', order='DESC')}" as="a">
+			<tr>
+				<td>
+					<f:link.action action="show" controller="Route" arguments="{route : a.route}">{a.route.name}</f:link.action>
+				</td>
+				<td>
+					<f:translate key="tx_pinkpoint_domain_model_route.grade.{a.route.grade}" />
+				</td>
+				<td>
+					<f:link.action action="show" controller="Sector" arguments="{sector : a.route.sector}">{a.route.sector.name}</f:link.action>
+				</td>
+				<td>{a.ascentDate -> f:format.date(format: 'd.m.y')}</td>
+				<td>
+					<f:translate key="tx_pinkpoint_domain_model_ascent.ascent_art.{a.ascentArt}" />
+				</td>
+				<td>
+					<f:translate key="tx_pinkpoint_domain_model_ascent.public.{a.publicVisible}" /></td>
+				<td>
+					<f:link.action action="edit" controller="Ascent" arguments="{ascent : a}">
+						<core:icon identifier="edit" />
+					</f:link.action>
+				</td>
+			</tr>
+		</f:for>
+	</table>
+
+
+</f:section>
+
+</html>
