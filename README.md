@@ -6,7 +6,7 @@ TYPO3 Extension
 - List and map of sectors and routes
 - Batch log of route ascents
 - Sector editing with permission management
-- drawing of a route's path on the image
+- Drawing of a route's path on the image
 
 Example:
 **https://csperedo.website/pinkpoint/**
